@@ -1,0 +1,131 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="content-language" content="fi">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Jukka Kari - Game</title>
+    
+    
+  </head>
+  <!-- onmousedown="newEnemy(mouseX+camera.x,mouseY+camera.y); -->
+  <body onkeydown="keys(event, 'down')"onkeyup="keys(event, 'up')" onmousemove="getMouseCoords(event)" onmousedown="mousedown()" onmouseup="mouseup()" id="body"  >
+  <canvas id="canvas_id";margin: 0 auto;></canvas>
+  <script src="js/collisions.js"></script>
+  <script src="js/gameui.js"></script>
+  <script src="js/map1.js"></script>
+  <script src="js/achievements.js"></script> 
+  <script src="js/audio.js"></script>
+  <script src="js/sprites.js"></script>
+  <script src="js/menu.js"></script> 
+
+  <script src="js/powerups.js"></script>
+ 
+  <script src="js/weapons.js"></script>
+  <script src="js/enemyold.js"></script>
+  <script src="js/player.js"></script>
+  <script src="js/camera.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/main.js"></script>
+  
+  
+  <script src="js/editorcode.js"></script>
+  
+
+  
+  
+  
+  <script src="js/player.js"></script>
+  
+  
+  <script src="js/gamecode.js"></script>
+
+  <p style="color:#fff;font-size:20px;">Move : WASD or arrow keys, shoot: R, jump: up key or W (press jump key second time in air to jump higher)</p>
+  <button onclick="freedraw();">Free drawing on/off</button>
+  <button onclick="gameOrEditor();">game/editor</button>
+
+  <button onclick="resetLevel();">reset level code</button> 
+  <button onclick="level1();">level1</button> 
+  <button onclick="level2();">level2</button>
+  <button onclick="testmap();">testmap</button>  
+  <button onclick="spawnBoss();">SpawnBoss</button>  
+  <div style="width:150px;height:400px;overflow:auto;background-color:#9ca; position:absolute;top:30px;left:1200px;">
+
+    <p> Choose block type</p>
+      <input type="radio" name="texture" id="player" value="player" onclick="changeBlockType(1)">
+      <label for="player"><img src="textures/player.png">Checkpoint</label> <br>
+      <input type="radio" name="texture" id="enemy" value="enemy" onclick="changeBlockType(2)">
+      <label for="enemy"><img src="textures/enemy.png">Enemy</label> <br>
+      <input type="radio" name="texture" id="Dirt" value="Dirt" onclick="changeBlockType(3)">
+      <label for="Dirt"><img src="textures/dirt.png">Dirt</label><br>
+      <input type="radio" name="texture" id="grassdirt" value="grassdirt" onclick="changeBlockType(91)">
+      <label for="grassdirt"><img src="textures/grassdirt.png">Grassdirt</label><br>
+      <input type="radio" name="texture" id="moss" value="moss" onclick="changeBlockType(5)">
+      <label for="moss"><img src="textures/moss.png">Moss</label><br>
+      <input type="radio" name="texture" id="goo" value="goo" onclick="changeBlockType(6)">
+      <label for="goo"><img src="textures/goo.png">Goo</label><br>
+      <input type="radio" name="texture" id="rock" value="rock" onclick="changeBlockType(10)">
+      <label for="rock"><img src="textures/test64.png">rock</label>
+       <input type="radio" name="texture" id="grass" value="grass" onclick="changeBlockType(11)">
+      <label for="grass"><img src="textures/test64.png">grass</label>
+       <input type="radio" name="texture" id="dirt" value="dirt" onclick="changeBlockType(12)">
+      <label for="dirt"><img src="textures/test64.png">dirt</label>
+       <input type="radio" name="texture" id="sand" value="sand" onclick="changeBlockType(13)">
+      <label for="sand"><img src="textures/test64.png">sand</label>
+      <input type="radio" name="texture" id="water" value="water" onclick="changeBlockType(14)">
+      <label for="water"><img src="textures/enemy.png">water</label> <br>
+      <input type="radio" name="texture" id="Vines" value="Vines" onclick="changeBlockType(15)">
+      <label for="Vines"><img src="textures/vines.png">Vines</label> <br>
+      <input type="radio" name="texture" id="Vines2" value="Vines2" onclick="changeBlockType(16)">
+      <label for="Vines2"><img src="textures/vines.png">Vines2</label> <br>
+      <input type="radio" name="texture" id="Vines2" value="Vines2" onclick="changeBlockType(17)">
+      <label for="Vines2"><img src="textures/enemy.png">plank</label> <br>
+      <input type="radio" name="texture" id="Vines2" value="Vines2" onclick="changeBlockType(18)">
+      <label for="Vines2"><img src="textures/enemy.png">plank2</label> <br>
+      <input type="radio" name="texture" id=">birch1" value=">birch1" onclick="changeBlockType(19)">
+      <label for=">birch1"><img src="textures/enemy.png">birch1</label> <br>
+      <input type="radio" name="texture" id=">birch2" value=">birch2" onclick="changeBlockType(20)">
+      <label for=">birch2"><img src="textures/enemy.png">birch2</label> <br>
+      <input type="radio" name="texture" id=">birch3" value=">birch3" onclick="changeBlockType(21)">
+      <label for=">birch3"><img src="textures/enemy.png">birch3</label> <br>
+      <input type="radio" name="texture" id=">birch4" value=">birch4" onclick="changeBlockType(22)">
+      <label for=">birch4"><img src="textures/enemy.png">birch4</label> <br>
+      <input type="radio" name="texture" id="pine1" value="pine1" onclick="changeBlockType(23)">
+      <label for="pine1"><img src="textures/enemy.png">pine1</label> <br>
+      <input type="radio" name="texture" id="pine2" value="pine2" onclick="changeBlockType(24)">
+      <label for="pine2"><img src="textures/enemy.png">pine2</label> <br>
+      <input type="radio" name="texture" id="pine3" value="pine3" onclick="changeBlockType(25)">
+      <label for="pine3"><img src="textures/enemy.png">pine3</label> <br>
+      <input type="radio" name="texture" id="pine4" value="pine4" onclick="changeBlockType(26)">
+      <label for="pine4"><img src="textures/enemy.png">pine4</label> <br>
+      <input type="radio" name="texture" id="rawmetal" value="rawmetal" onclick="changeBlockType(27)">
+      <label for="rawmetal"><img src="textures/enemy.png">rawmetal</label> <br>
+       <input type="radio" name="texture" id="metal1" value="metal1" onclick="changeBlockType(28)">
+      <label for="metal1"><img src="textures/enemy.png">metal1</label> <br>
+      <input type="radio" name="texture" id="metalbolt" value="metalbolt" onclick="changeBlockType(29)">
+      <label for="metalbolt"><img src="textures/enemy.png">metalbolt</label> <br>
+      <input type="radio" name="texture" id="metalbutton" value="metalbutton" onclick="changeBlockType(30)">
+      <label for="metalbutton"><img src="textures/enemy.png">metalbutton</label> <br>
+      <input type="radio" name="texture" id="metalcrack1" value="metalcrack1" onclick="changeBlockType(31)">
+      <label for="metalcrack1"><img src="textures/enemy.png">metalcrack1</label> <br>
+      <input type="radio" name="texture" id="metalcrack2" value="metalcrack2" onclick="changeBlockType(32)">
+      <label for="metalcrack2"><img src="textures/enemy.png">metalcrack2</label> <br>
+      <input type="radio" name="texture" id="metalcrack3" value="metalcrack3" onclick="changeBlockType(33)">
+      <label for="metalcrack3"><img src="textures/enemy.png">metalcrack3</label> <br>
+      <input type="radio" name="texture" id="metalcrack4" value="metalcrack4" onclick="changeBlockType(34)">
+      <label for="metalcrack4"><img src="textures/enemy.png">metalcrack4</label> <br>
+
+
+      <input type="radio" name="texture" id="water2" value="water2" onclick="changeBlockType(90)">
+      <label for="water2"><img src="textures/enemy.png">water2</label> <br>
+
+      <input type="radio" name="texture" id="moutherminator" value="moutherminator" onclick="changeBlockType(100)">
+      <label for="moutherminator"><img src="textures/enemy.png">Enemy3</label> <br>
+
+     
+    
+  </div>
+  </body>
+</html>
+

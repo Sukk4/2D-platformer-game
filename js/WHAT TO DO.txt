@@ -1,0 +1,39 @@
+UI	
+	MENU
+		START GAME
+			level selector 
+		LEADERBOARD
+		
+		OPTIONS
+			GRAPHICS
+
+				how many particles 
+				resolution
+				drawdistance / canvas.width ja height
+
+			AUDIO
+				
+				ADD MUTE BUTTON TO GAME
+				
+		
+		CREDITS
+
+	GAME
+		POINTS/SCORE
+			style example = "Points: 100"
+		TIME
+			Time limit or just elapsed time
+		WEAPON
+			weapon selected,
+			weapon pickups
+		AMMO
+			how much ammo left
+
+		HEALTH
+			Update healthbar textures
+
+ENEMY
+
+CAMERA 
+	NEEDS FIXING
+		emptyspace between blocks in IE & FF (fix is to Math.round camera pos but it makes player movement shitty) ATM PROBLEM LIES IN IE AND FF

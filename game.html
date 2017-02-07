@@ -1,0 +1,54 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN"
+"http://www.w3.org/TR/html4/loose.dtd">
+<html>
+  <head>
+    <meta http-equiv="content-type" content="text/html; charset=utf-8">
+    <meta http-equiv="content-language" content="fi">
+    <link rel="stylesheet" href="style.css" type="text/css">
+    <title>Jukka Kari - Game</title>
+    
+    
+  </head>
+  <!-- onmousedown="newEnemy(mouseX+camera.x,mouseY+camera.y); -->
+  <body onkeydown="keys(event, 'down')"onkeyup="keys(event, 'up')" onmousemove="getMouseCoords(event)" onmousedown="mousedown()" onmouseup="mouseup()" id="body"  >
+  <canvas id="canvas_id";margin: 0 auto;></canvas>
+  <script src="js/collisions.js"></script>
+  <script src="js/gameui.js"></script>
+  <script src="js/map1.js"></script>
+  <script src="js/achievements.js"></script> 
+  <script src="js/audio.js"></script>
+  <script src="js/sprites.js"></script>
+  <script src="js/menu.js"></script> 
+
+  <script src="js/powerups.js"></script>
+ 
+  <script src="js/weapons.js"></script>
+  <script src="js/enemyold.js"></script>
+  <script src="js/player.js"></script>
+  <script src="js/camera.js"></script>
+  <script src="js/editorcode.js"></script>
+  <script src="js/player.js"></script>
+  <script src="js/gamecode.js"></script>
+  <script src="js/render.js"></script>
+  <script src="js/main.js"></script>
+  
+  
+  
+ 
+  
+ 
+
+  <p style="color:#fff;font-size:20px;">Move : WASD or arrow keys, shoot: R, jump: up key or W (press jump key second time in air to jump higher) </p>
+  
+
+    
+  <button onclick="spawnBoss();">SpawnBoss</button> 
+   <button onclick="canvasSize(800,600);">800x600</button>  
+    <button onclick="canvasSize(1200,900);">1200x900</button>   
+  
+
+     
+  
+  </body>
+</html>
+
